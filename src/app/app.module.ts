@@ -2,6 +2,7 @@ import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {HttpModule} from '@angular/http';
 import {RouterModule} from "@angular/router";
+import { TRANSLATION_PROVIDERS, TranslatePipe, TranslateService }   from './translate';
 
 import {AppComponent} from './app.component';
 import {WelcomeComponent} from "./home/welcome.component";
@@ -9,7 +10,8 @@ import {WelcomeComponent} from "./home/welcome.component";
 @NgModule({
     declarations: [
         AppComponent,
-        WelcomeComponent
+        WelcomeComponent,
+        TranslatePipe
     ],
     imports: [
         BrowserModule,
@@ -20,7 +22,10 @@ import {WelcomeComponent} from "./home/welcome.component";
             {path: '**', redirectTo: 'welcome', pathMatch: 'full'}
         ])
     ],
-    providers: [],
+    providers: [
+        TRANSLATION_PROVIDERS,
+        TranslateService
+    ],
     bootstrap: [AppComponent]
 })
 export class AppModule {

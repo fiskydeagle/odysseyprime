@@ -3,14 +3,24 @@
         <div class="container-fluid">
             <a href="#" class="navbar-brand">{{pageTitle}}</a>
             <ul class="nav navbar-nav">
-                <li routerLinkActive="active"><a [routerLink]="['/welcome']">Home</a></li>
-                <li routerLinkActive="active"><a [routerLink]="['/retail']">Retail List</a></li>
-                <li routerLinkActive="active"><a [routerLink]="['/healthcare']">Healthcare List</a></li>
+                <li routerLinkActive="active"><a [routerLink]="['/welcome']">{{ 'Home' | translate }}</a></li>
+                <li routerLinkActive="active"><a [routerLink]="['/retail']">{{ 'Retail List' | translate }}</a></li>
+                <li routerLinkActive="active"><a [routerLink]="['/healthcare']">{{ 'Healthcare List' | translate }}</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right mr0">
+                <li>
+                    <div class="btn-group navbar-btn">
+                        <button *ngFor="let lang of supportedLanguages"
+                                (click)="selectLang(lang.value)"
+                                class="btn btn-default" [class.btn-primary]="isCurrentLang(lang.value)">
+                            {{ lang.display }}
+                        </button>
+                    </div>
+                </li>
             </ul>
         </div>
     </nav>
     <div class="container">
         <router-outlet></router-outlet>
-        {{title}}
     </div>
 </div>

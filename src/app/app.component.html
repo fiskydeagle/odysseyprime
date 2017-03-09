@@ -1,3 +1,16 @@
-<h1>
-  {{title}}
-</h1>
+<div>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <a href="#" class="navbar-brand">{{pageTitle}}</a>
+            <ul class="nav navbar-nav">
+                <li routerLinkActive="active"><a [routerLink]="['/welcome']">Home</a></li>
+                <li routerLinkActive="active"><a [routerLink]="['/retail']">Retail List</a></li>
+                <li routerLinkActive="active"><a [routerLink]="['/healthcare']">Healthcare List</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <router-outlet></router-outlet>
+        {{title}}
+    </div>
+</div>

@@ -33,9 +33,4 @@ export class TranslateService {
 		// public perform translation
 		return this.translate(key);
 	}
-
-  public getObject() {
-    // public perform translation
-    return this._translations;
-  }
 }

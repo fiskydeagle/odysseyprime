@@ -6,6 +6,7 @@ import { TRANSLATION_PROVIDERS, TranslatePipe, TranslateService }   from './tran
 
 import {AppComponent} from './app.component';
 import {WelcomeComponent} from "./home/welcome.component";
+import {THEME_PROVIDERS, ThemeService} from "./theme";
 
 @NgModule({
     declarations: [
@@ -24,7 +25,9 @@ import {WelcomeComponent} from "./home/welcome.component";
     ],
     providers: [
         TRANSLATION_PROVIDERS,
-        TranslateService
+        TranslateService,
+        THEME_PROVIDERS,
+        ThemeService
     ],
     bootstrap: [AppComponent]
 })

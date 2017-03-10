@@ -1,36 +1,37 @@
 <div>
-    <nav class="navbar navbar-default">
-        <div class="container-fluid">
-            <a href="#" class="navbar-brand">{{pageTitle}}</a>
-            <ul class="nav navbar-nav">
-                <li routerLinkActive="active"><a [routerLink]="['/welcome']">{{ 'Home' | translate }}</a></li>
-                <li routerLinkActive="active"><a [routerLink]="['/retail']">{{ 'Retail List' | translate }}</a></li>
-                <li routerLinkActive="active"><a [routerLink]="['/healthcare']">{{ 'Healthcare List' | translate }}</a></li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right mr0">
-                <li>
-                    <div class="btn-group navbar-btn mr15">
-                        <select (change)="selectTheme($event.target.value)" class="btn btn-default">
-                            <option value="">Default</option>
-                            <option *ngFor="let theme of supportedThemes"
-                                    [value]="theme.value"
-                                    [selected]="isCurrentTheme(theme.value)">{{ theme.display }}</option>
-                        </select>
-                    </div>
-                </li>
-                <li>
-                    <div class="btn-group navbar-btn">
-                        <button *ngFor="let lang of supportedLanguages"
-                                (click)="selectLang(lang.value)"
-                                class="btn btn-default" [class.btn-primary]="isCurrentLang(lang.value)">
-                            {{ lang.display }}
-                        </button>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </nav>
-    <div class="container">
-        <router-outlet></router-outlet>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <a [routerLink]="['/welcome']" class="navbar-brand">{{pageTitle}}</a>
+      <ul class="nav navbar-nav">
+        <li routerLinkActive="active"><a [routerLink]="['/welcome']">{{ 'Home' | translate }}</a></li>
+        <li routerLinkActive="active"><a [routerLink]="['/retail-list']">{{ 'Retail List' | translate }}</a></li>
+        <li routerLinkActive="active"><a [routerLink]="['/healthcare']">{{ 'Healthcare List' | translate }}</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right mr0">
+        <li>
+          <div class="btn-group navbar-btn mr15">
+            <select (change)="selectTheme($event.target.value)" class="btn btn-default">
+              <option value="">Default</option>
+              <option *ngFor="let theme of supportedThemes"
+                      [value]="theme.value"
+                      [selected]="isCurrentTheme(theme.value)">{{ theme.display }}
+              </option>
+            </select>
+          </div>
+        </li>
+        <li>
+          <div class="btn-group navbar-btn">
+            <button *ngFor="let lang of supportedLanguages"
+                    (click)="selectLang(lang.value)"
+                    class="btn btn-default" [class.btn-primary]="isCurrentLang(lang.value)">
+              {{ lang.display }}
+            </button>
+          </div>
+        </li>
+      </ul>
     </div>
+  </nav>
+  <div class="container">
+    <router-outlet></router-outlet>
+  </div>
 </div>

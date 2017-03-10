@@ -1,0 +1,90 @@
+<div class='panel panel-primary'>
+  <div class='panel-heading'>
+    {{pageTitle}}
+  </div>
+
+  <div class="panel-body" *ngFor='let retail of retail_list'>
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="row mb10">
+          <div class="col-xs-3">
+            <strong>Name:</strong>
+          </div>
+          <div class="col-xs-9">
+            {{retail.name}}
+          </div>
+        </div>
+        <div class="row mb10">
+          <div class="col-xs-3">
+            <strong>Description:</strong>
+          </div>
+          <div class="col-xs-9">
+            <p>{{retail.description }}</p>
+          </div>
+        </div>
+        <div class="row mb10">
+          <div class="col-xs-3">
+            <strong>Created At:</strong>
+          </div>
+          <div class="col-xs-9">
+            {{retail.createdAt * 1000 | date}}
+          </div>
+        </div>
+        <div class="row mb10">
+          <div class="col-xs-3">
+            <strong>Customer Satisfaction:</strong>
+          </div>
+          <div class="col-xs-9">
+            {{retail.customer_satisfaction}}
+          </div>
+        </div>
+        <div class="row mb10">
+          <div class="col-xs-3">
+            <strong>Stock per Region:</strong>
+          </div>
+          <div class="col-xs-9">
+            <div class="row mb10">
+              <div class="col-xs-5">
+                <strong>Region Name</strong>
+              </div>
+              <div class="col-xs-7">
+                <strong>Stock</strong>
+              </div>
+            </div>
+            <div class="row mb10" *ngFor='let region of retail.stock.regions'>
+              <div class="col-xs-5">
+                {{region.name}}
+              </div>
+              <div class="col-xs-7">
+                {{region.stock}}
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row mb10">
+          <div class="col-xs-3">
+            <strong>Total Stock:</strong>
+          </div>
+          <div class="col-xs-9">
+            {{retail.stock.total}}
+          </div>
+        </div>
+        <div class="row mb10">
+          <div class="col-xs-3">
+            <strong>Sales:</strong>
+          </div>
+          <div class="col-xs-9">
+            {{retail.sales}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class='panel-footer'>
+    <a class='btn btn-default' (click)='onBack()' style='width:80px'>
+      Back
+    </a>
+  </div>
+
+</div>

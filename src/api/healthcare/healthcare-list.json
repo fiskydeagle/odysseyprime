@@ -1,0 +1,67 @@
+[{
+	"id": 1,
+	"name": "Healthcare1",
+	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur aliquet quam id dui posuere blandit.",
+	"createdAt": 1489104000,
+	"customer_satisfaction": {
+		"regions": [{
+			"id": 1,
+			"name": "Region1",
+			"hospitals": [{
+				"id": 1,
+				"name": "Hospital1",
+				"customer_satisfaction": 1
+			}, {
+				"id": 2,
+				"name": "Hospital2",
+				"customer_satisfaction": 1
+			}],
+			"total": 1
+		}, {
+			"id": 1,
+			"name": "Region2",
+			"hospitals": [{
+				"id": 3,
+				"name": "Hospital3",
+				"customer_satisfaction": 2
+			}, {
+				"id": 4,
+				"name": "Hospital4",
+				"customer_satisfaction": 2
+			}],
+			"total": 2
+		}],
+		"total": 1.5
+	}
+}, {
+	"id": 2,
+	"name": "Healthcare2",
+	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.",
+	"createdAt": 1489017600,
+	"customer_satisfaction": {
+		"regions": [{
+			"id": 3,
+			"name": "Region3",
+			"hospitals": [{
+				"id": 5,
+				"name": "Hospital5",
+				"customer_satisfaction": 3
+			}],
+			"total": 3
+		}, {
+			"id": 4,
+			"name": "Region4",
+			"hospitals": [{
+				"id": 6,
+				"name": "Hospital6",
+				"customer_satisfaction": 2
+			}, {
+				"id": 7,
+				"name": "Hospital7",
+				"customer_satisfaction": 2
+			}],
+			"total": 2
+		}],
+		"total": 2.5
+	}
+}]

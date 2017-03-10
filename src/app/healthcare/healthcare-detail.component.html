@@ -1,0 +1,79 @@
+<div class='panel panel-primary'>
+  <div class='panel-heading'>
+    {{pageTitle}}
+  </div>
+
+  <div class="panel-body" *ngFor='let healthcare of healthcare_list'>
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="row mb10">
+          <div class="col-xs-3">
+            <strong>Name:</strong>
+          </div>
+          <div class="col-xs-9">
+            {{healthcare.name}}
+          </div>
+        </div>
+        <div class="row mb10">
+          <div class="col-xs-3">
+            <strong>Description:</strong>
+          </div>
+          <div class="col-xs-9">
+            <p>{{healthcare.description }}</p>
+          </div>
+        </div>
+        <div class="row mb10">
+          <div class="col-xs-3">
+            <strong>Created At:</strong>
+          </div>
+          <div class="col-xs-9">
+            {{healthcare.createdAt * 1000 | date}}
+          </div>
+        </div>
+        <div class="row mb10">
+          <div class="col-xs-12">
+            <strong>Customer Satisfaction per Region:</strong>
+          </div>
+        </div>
+        <div class="row mb10" *ngFor='let region of healthcare.customer_satisfaction.regions'>
+          <div class="col-xs-3">
+            <strong>{{region.name}}</strong>
+          </div>
+          <div class="col-xs-9">
+            <div class="row mb10" *ngFor='let hospital of region.hospitals'>
+              <div class="col-xs-5">
+                <strong>{{hospital.name}}</strong>
+              </div>
+              <div class="col-xs-7">
+                {{hospital.customer_satisfaction}}
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-12 pr0 pl0 mb10">  
+            <div class="col-xs-3">
+              <strong>{{region.name}} Customer Satisfaction</strong>
+            </div>
+            <div class="col-xs-9">
+              {{region.total}}
+            </div>
+          </div>
+        </div>
+        <div class="row mb10">
+          <div class="col-xs-3">
+            <strong>Customer Satisfaction Total:</strong>
+          </div>
+          <div class="col-xs-9">
+            {{healthcare.customer_satisfaction.total}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class='panel-footer'>
+    <a class='btn btn-default' (click)='onBack()' style='width:80px'>
+      Back
+    </a>
+  </div>
+
+</div>

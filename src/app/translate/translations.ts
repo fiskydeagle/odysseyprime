@@ -8,10 +8,9 @@ import { LANG_SQ_NAME, LANG_SQ_TRANS } from './lang-sq';
 export const TRANSLATIONS = new OpaqueToken('translations');
 
 // all traslations
-const dictionary = {
-	[LANG_EN_NAME]: LANG_EN_TRANS,
-	[LANG_SQ_NAME]: LANG_SQ_TRANS
-};
+const dictionary = {};
+dictionary[LANG_EN_NAME] = LANG_EN_TRANS;
+dictionary[LANG_SQ_NAME] = LANG_SQ_TRANS;
 
 // providers
 export const TRANSLATION_PROVIDERS = [

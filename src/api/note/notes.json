@@ -1,0 +1,12 @@
+[{
+	"id": 1,
+	"text": "Note 1. Lorem ipsum dolores.",
+	"email": "viato@gmail.com"
+}, {
+	"id": 2,
+	"text": "Sed porttitor lectus nibh. Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+}, {
+	"id": 3,
+	"subject": "Subject - Dolores",
+	"url": "/assets/images/logo.jpg"
+}]

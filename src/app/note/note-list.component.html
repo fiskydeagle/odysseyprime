@@ -1,0 +1,17 @@
+<div class='panel panel-primary'>
+  <div class='panel-heading'>
+    {{pageTitle | translate}}
+  </div>
+  <div class='panel-body'>
+    <p class="alert alert-success" *ngFor='let note of notes'>
+      <span class="dblock" *ngIf='note.text'><strong>Text:</strong> {{note.text}}</span>
+      <span class="dblock" *ngIf='note.subject'><strong>Subject:</strong> {{note.subject}}</span>
+      <span class="dblock" *ngIf='note.email'><strong>Email:</strong> {{note.email}}</span>
+      <span class="dblock" *ngIf='note.url'>
+        <strong>URL:</strong> <br/>
+        <img [src]="note.url"
+             class="img-responsive center-block" />
+      </span>
+    </p>
+  </div>
+</div>

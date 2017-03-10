@@ -17,6 +17,8 @@ import {HealthcareListComponent} from "./healthcare/healthcare-list.component";
 import {HealthcareDetailComponent} from "./healthcare/healthcare-detail.component";
 import {HealthcareFilterPipe} from "./healthcare/healthcare-filter.pipe";
 import {HealthcareService} from "./healthcare/healthcare.service";
+import {NoteListComponent} from "./note/note-list.component";
+import {NoteService} from "./note/note.service";
 
 @NgModule({
   declarations: [
@@ -28,7 +30,8 @@ import {HealthcareService} from "./healthcare/healthcare.service";
     RetailFilterPipe,
     HealthcareListComponent,
     HealthcareDetailComponent,
-    HealthcareFilterPipe
+    HealthcareFilterPipe,
+    NoteListComponent
   ],
   imports: [
     BrowserModule,
@@ -41,6 +44,7 @@ import {HealthcareService} from "./healthcare/healthcare.service";
       {path: 'retail/:id', component: RetailDetailComponent},
       {path: 'healthcare-list', component: HealthcareListComponent},
       {path: 'healthcare/:id', component: HealthcareDetailComponent},
+      {path: 'notes', component: NoteListComponent},
       {path: '', redirectTo: 'welcome', pathMatch: 'full'},
       {path: '**', redirectTo: 'welcome', pathMatch: 'full'}
     ])
@@ -51,7 +55,8 @@ import {HealthcareService} from "./healthcare/healthcare.service";
     THEME_PROVIDERS,
     ThemeService,
     RetailService,
-    HealthcareService
+    HealthcareService,
+    NoteService
   ],
   bootstrap: [AppComponent]
 })

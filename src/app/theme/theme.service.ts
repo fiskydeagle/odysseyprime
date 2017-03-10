@@ -23,8 +23,7 @@ export class ThemeService {
 			return this._themes[this.currentTheme];
 		}
 		return {
-      name: 'Cerulean',
-      link: 'assets/themes/cerulean/bootstrap.min.css'
+      link: ''
     };
 	}
 }

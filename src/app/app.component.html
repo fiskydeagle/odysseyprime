@@ -10,11 +10,12 @@
             <ul class="nav navbar-nav navbar-right mr0">
                 <li>
                     <div class="btn-group navbar-btn mr15">
-                      <select (change)="selectTheme($event.target.value)" class="btn btn-default">
-                          <option *ngFor="let theme of supportedThemes"
-                                  [value]="theme.value"
-                                  [selected]="isCurrentTheme(theme.value)">{{ theme.display }}</option>
-                      </select>
+                        <select (change)="selectTheme($event.target.value)" class="btn btn-default">
+                            <option value="">Default</option>
+                            <option *ngFor="let theme of supportedThemes"
+                                    [value]="theme.value"
+                                    [selected]="isCurrentTheme(theme.value)">{{ theme.display }}</option>
+                        </select>
                     </div>
                 </li>
                 <li>
